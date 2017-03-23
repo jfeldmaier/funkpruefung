@@ -45,7 +45,11 @@ def main():
     # cur.execute('SELECT _id FROM question_to_topic WHERE topic_id = 1')
     # cur.execute('SELECT question FROM question WHERE reference=?', t)
 
-    fragen_liste = ['TB201']
+    ## Hier die Fragen eintragen aus denen das Arbeitsblatt bestehen soll ##
+    fragen_liste = ['TD420', 'TB201', 'TD603', 'TD702', 'TE102']
+
+
+
 
     for frage in fragen_liste:
         t = (frage,)
@@ -55,7 +59,7 @@ def main():
         # print fragen_text[0]
         # print fragen_text[1]
 
-        print fragen_text[0].replace("img src='", "img src='drawable/")
+        # print fragen_text[0].replace("img src='", "img src='drawable/")
 
         outfile.write("<p>" + "<b>" + frage + " </b>" + fragen_text[0].replace("img src='", "img src='drawable/").encode("utf-8") + "</p>")
 
